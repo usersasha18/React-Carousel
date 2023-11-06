@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #656565;
+
+}
+
+
+.wrapper {
+  max-width: 1200px;
+}
+
+
+
+.wrapper .carousel {
+  font-size: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.wrapper button{
+  top: 50%;
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.wrapper button:first-child {
+	z-index: 2;
+	left: 17%;
+}
+
+.wrapper button:last-child {
+  right:17%
+}
+
+.carousel {
+   user-select: none;
+}
+
+
+.carousel img {
+  user-select: none;
+  transition: all .3s ease-in-out;
+  height: 400px;
+  width: calc(100% / var(--slide-to-show) + -1.0rem);
+  padding: 0.5rem;
+  object-fit: cover;
+}
+
+.carousel img:last-child {
+  margin-left: 0px;
+}
+
+
+
+
+.inner_carousel {
+  white-space: nowrap;
+  transition: transform .5s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100% / var(--slide-to-show))
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width:100%
+  }
+}
